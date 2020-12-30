@@ -1,0 +1,100 @@
+
+.navbar-brand{
+	margin: 0;
+	padding: 0;
+}
+.navbar{
+	padding: .8rem;
+}
+.navbar-nav li{
+	padding-right: 20px;
+}
+.nav-link{
+	font-size: 1.1em !important;
+}
+body a{
+	color: #fff;
+}
+body a:hover{
+	color: #eee;
+}
+/*Stable*/
+.btn-primary{
+	background-color: #2b2b31;
+	border: 1px solid #2b2b31;
+}
+.btn-primary:hover{
+	background-color: #474d4c;
+	border: 1px solid #474d4c;
+}
+#header{
+	height:92px; 
+	
+	border-bottom:1px solid #eee;
+}
+#header ul{padding:33px 0 0 45px;}
+#header li{
+	list-style:none;
+	float:left;
+	margin-right:30px;	
+}
+#header li a{
+	font-weight:700;
+	color:#333;
+	font-size:14px;	
+	text-decoration:none;
+	text-transform:uppercase;
+	letter-spacing:1px;
+}
+#headerli a:hover{
+	color:#000;
+	cursor:pointer;
+}
+#header .header2{
+	float: right;
+	padding: 0 30px 0 0;
+}
+#info{
+	position: absolute;
+	top: 20px;
+	left: 676px;
+	text-align: center;
+	width: 413px;
+}
+#info p{font-size:15px; padding:3px;color:#b1b1b3}
+#info a{text-decoration:none;} 
+footer{
+	width: 100%;
+	background: #222;
+	color: white;
+	margin: 0 ;
+	padding: 0;
+}
+footer hr{
+	color: #fff;
+}
+body a{
+	color: #fff;
+}
+body a:hover{
+	color: #eee;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}

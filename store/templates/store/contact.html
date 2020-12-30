@@ -1,0 +1,42 @@
+{% extends 'store/test.html' %}
+{% load static %}
+{% block content %}
+<br>
+        <!-- Contact form-->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="h1-responsive font-weight-bold text-center my-4">Contact Us!</h4>
+                    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+                </header>
+                <article class="card-body">
+                    <form method="POST">
+                    	{% csrf_token %}
+
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" name="from_email" placeholder="">
+                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" class="form-control" name="subject" placeholder="">
+                        </div>
+                        <div class="md-form">
+                            <label for="message">Your message</label>
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                        </div>
+                    
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Send  </button>
+                    </div>
+                    </form>
+                </article>
+            </div>
+            </div>
+        </div>
+        <!--end form-->
+        <br>
+{% endblock content%}

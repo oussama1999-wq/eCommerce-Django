@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	     <link rel="stylesheet" href="/static/src/bootstrap/css/bootstrap.min.css">
+     <script src="/static/src/Jquery/jquery-3.3.1.min.js"></script>
+     <script src="/static/src/bootstrap/js/bootstrap.min.js"></script>
+     <script src="/static/src/Js/toggle.js"></script>
+     <link rel="stylesheet" href="/static/src/css/style-home.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8" />
+     <link rel="stylesheet" href="/static/src/Fontawesome 5.5/fontawesome-free-5.5.0-web/css/all.css">
+
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+            
+		}
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #424a5e;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: #fff;
+			
+		}
+
+		.login_btn {
+			width: 100%;
+			background: #3b5c9b !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #3b5c9b !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+
+		#messages{
+			background-color: grey;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+		}
+	</style>
+
+</head>
+<body style="background-image: url('/static/images/form-v9.jpg');">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarresponsive">
+          <ul class="navbar-nav "> 
+              <li class="nav-item active ">
+                  <a class="nav-link" href="{% url 'Home' %}">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'store' %}">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>    
+        </div>
+          <a class="navbar-brand" href="{% url 'Home' %}"><img src="/static/src/img/logo/logo6.png" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarresponsive">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarresponsive">
+              <ul class="navbar-nav ml-auto"> 
+                  <li class="nav-item active ">
+                      <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="{% url 'register' %}">Register</a>
+                  </li>
+              </ul>
+              
+            
+          </div>
+      </div>
+  </nav>             
+    <!-- End Second Nav-->
+
+	<div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+
+
+					<h3 id="form-title">LOGIN</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="">
+						{% csrf_token %}
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" name="username" placeholder="Username..." class="form-control">
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+								<input type="password" name="password" placeholder="Password..." class="form-control" >
+						</div>
+
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 				<input class="btn login_btn" type="submit" value="Login">
+				   			</div>
+					</form>
+
+				</div>
+		        {% for message in messages %}
+		        <p id='messages'>{{message}}</p>
+		        {% endfor %}
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links" style="color:white">
+						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+					</div>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="page-footer font-small unique-color-dark">
+
+    <div style="background-color: #6351ce;">
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">AI CENTER STORE</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>"Customer service shouldn’t just be a department,</p><p> it should be the entire company."</p> 
+
+        </div>
+        <!-- Grid column -->
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="signin.html">Your Account</a>
+          </p>
+          <p>
+            <a href="{% url 'store' %}">Store</a>
+          </p>
+          <p>
+            <a href="#!">Shipping</a>
+          </p>
+          <p>
+            <a href="{% url 'contact' %}">Contact</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> 139C Hay El Mouhamadi, Ouarzazate, Morocco</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> centeremai@gmail.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 212 6 73 39 60 77 
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© Copyright EL MOUATASIM AI CENTER 2020
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+</body>
+
+</html>

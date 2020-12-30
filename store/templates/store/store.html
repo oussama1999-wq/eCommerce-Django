@@ -1,0 +1,45 @@
+{% extends 'store/test.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/product.css">
+    <br>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-2 mx-auto">
+            <div class="list-group">
+
+                <a href="/store" class="list-group-item list-group-item-action">All Products</a>
+                <a href="/store/?category=laptop"
+                    class="list-group-item list-group-item-action">Laptop</a>
+                <a href="/store/?category=phone"
+                    class="list-group-item list-group-item-action">Phone</a>
+            </div>
+            
+        </div>
+        <div id='products' class="col-lg-10 mx-auto">
+            <div class="row mx-2">
+                {% for product in products %}
+                <div class="card mx-0.5 mb-3 col-lg-4 ">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="{{product.imageURL}}">
+                        <div class="caption">
+                            <h4 class="group inner list-group-item-heading">
+                                {{product.name}}</h4>
+                            <p class="group inner list-group-item-text">{{product.description}} </p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">{{product.price|floatformat:2}} Dhs</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <button data-product={{product.id}} data-action="add"
+                                    class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content%}

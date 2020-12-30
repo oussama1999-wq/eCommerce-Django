@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>AI CENTER STORE - Home Page</title>
+     <link rel="stylesheet" href="/static/src/bootstrap/css/bootstrap.min.css">
+     <script src="/static/src/Jquery/jquery-3.3.1.min.js"></script>
+     <script src="/static/src/bootstrap/js/bootstrap.min.js"></script>
+     <script src="/static/src/Js/toggle.js"></script>
+     <link rel="stylesheet" href="/static/src/css/style-home.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8" />
+     <link rel="stylesheet" href="/static/src/Fontawesome 5.5/fontawesome-free-5.5.0-web/css/all.css">
+</head>
+<body>
+    <!-- Second Nav-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarresponsive">
+          <ul class="navbar-nav "> 
+              <li class="nav-item active ">
+                  <a class="nav-link" href="{% url 'Home' %}">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'store' %}">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>    
+        </div>
+          <a class="navbar-brand" href="{% url 'Home' %}"><img src="/static/src/img/logo/logo6.png" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarresponsive">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarresponsive">
+              <ul class="navbar-nav ml-auto"> 
+                  <li class="nav-item active ">
+                      <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  </li>
+                  <li class="nav-item ">
+                      <a class="nav-link" href="{% url 'register' %}">Register</a>
+                  </li>
+              </ul>
+    
+      </div>
+  </nav>             
+    <!-- End Second Nav-->
+
+    <!-- Slider-->
+    <div id="slide" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#slide" data-slide-to="0" class="active"></li>
+            <li data-target="#slide" data-slide-to="1"></li>
+        </ul>
+          
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="/static/src/img/Slider/Background.jpg" alt="First slider">
+            <div class="carousel-caption">
+                <h1 class="display-2">Find The Laptop To Fit Your Lifestyle</h1>
+                <h3>New Laptop , New Experience</h3>  
+                <a href="{% url 'contact' %}"><button type="button" class="btn btn-outline btn-lg">Contact us</button></a>
+                <a href="{% url 'register' %}"><button type="button" class="btn btn-primary btn-lg">Open Shop</button></a>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <img src="/static/src/img/Slider/Background2.jpg" alt="Second Slider">
+            <div class="carousel-caption">
+                    <h1 class="display-2">Find The Right Phone For YOU</h1>
+                    <h3>New Phone , New Life Style</h3>
+                <a href="{% url 'contact' %}"><button type="button" class="btn btn-outline btn-lg">contact us</button></a>
+                <a href="register"><button type="button" class="btn btn-primary btn-lg">Open Shop</button></a>
+            </div>  
+        </div>
+        </div>
+          
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#slide" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#slide" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+          
+    </div>
+
+    <!-- Description -->  
+    <div class="container-fluid">
+        <div class="row jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+            <p class="lead">We at AI CENTER STORE. are crazy about technology devices. </p>
+            <p id="x">Enjoy a huge variety of the newest laptops and phones .</p>
+            </div>
+            <div class="col-xs-12 col-sm12 col-md-3 col-lg-3 col-xl-2">
+                <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-secondary btn-lg">Shop Now!</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- End Description -->  
+
+    <!--Section -->
+<div class="container">
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Phone for EveryOne. <span class="text-muted">It'll blow your mind.</span></h2>
+        <p class="lead">AI CENTER STORE for a great selection of cell phones from Apple,
+           Samsung, & LG. Get free shipping ... Wireless deals. Buy online, pick up in store Find nearest store.</p>
+      </div>
+      <br>
+      <br>
+      <div class="col-md-5">
+          <div class="hovereffect">
+            <img class="featurette-image img-fluid mx-auto"  src="/static/src/img/Product/phone.jpg" alt="Watch image">
+            <div class="overlay">
+                <h2>New Phone Collection</h2>
+                <a class="info" href="register.html">Shop Now</a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Various Laptops by AI Center Store. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Buy laptops online at affordable prices. Select from a wide range of basic, professional & gaming Laptops from leading brands such as HP, Dell, Lenovo and ...</p>
+      </div>
+      <br>
+      <div class="col-md-5">
+            <div class="hovereffect">
+              <img class="featurette-image img-fluid mx-auto"  src="/static/src/img/Product/laptop.jpg" alt="Watch image">
+              <div class="overlay">
+                  <h2>New Laptop Collection</h2>
+                  <a class="info" href="register.html">Shop Now</a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+</div>
+
+    <!--End Section -->
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+    <div style="background-color: #6351ce;">
+      <div class="container">
+
+        <!-- Grid row-->
+        <div class="row py-4 d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+            <!-- Facebook -->
+            <a class="fb-ic">
+              <i class="fab fa-facebook-f white-text mr-4"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic">
+              <i class="fab fa-twitter white-text mr-4"> </i>
+            </a>
+            <!--Instagram-->
+            <a class="ins-ic">
+              <i class="fab fa-instagram white-text"> </i>
+            </a>
+
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+      </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+      <!-- Grid row -->
+      <div class="row mt-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+          <!-- Content -->
+          <h6 class="text-uppercase font-weight-bold">AI CENTER STORE</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>"Customer service shouldn’t just be a department,</p><p> it should be the entire company."</p> 
+
+        </div>
+        <!-- Grid column -->
+
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a href="signin.html">Your Account</a>
+          </p>
+          <p>
+            <a href="{% url 'store' %}">Store</a>
+          </p>
+          <p>
+            <a href="#!">Shipping</a>
+          </p>
+          <p>
+            <a href="{% url 'contact' %}">Contact</a>
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold">Contact</h6>
+          <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> 139C Hay El Mouhamadi, Ouarzazate, Morocco</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> centeremai@gmail.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> + 212 6 73 39 60 77 
+          </p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© Copyright EL MOUATASIM AI CENTER 2020
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+</body>
+</html>
